@@ -15,9 +15,16 @@ El proyecto sigue los principios de **Arquitectura Limpia / Clean Arquitecture**
 
 ## Ejecución
 
-1. Acceder a la carpeta de backend y abrir una terminal y ejecutar el comando npm run start:dev
-2. Acceder a la carpeta de frontend y abrir una terminal y ejecutar el comando ng serve
-3. Acceder a las aplicaciones:
+1. Reemplazar los valores de la base de datos postgres en el archivo app.module.ts dentro de la carpeta backend/src
+      Por ejemplo:
+      host: process.env.DATABASE_HOST || 'localhost',
+      port: Number(process.env.DATABASE_PORT) || 5432,
+      username: process.env.DATABASE_USER || 'postgres',
+      password: process.env.DATABASE_PASSWORD || 'weimar',
+      database: process.env.DATABASE_NAME || 'postgres',
+2. Acceder a la carpeta de backend y abrir una terminal y ejecutar el comando npm run start:dev
+3. Acceder a la carpeta de frontend y abrir una terminal y ejecutar el comando ng serve
+4. Acceder a las aplicaciones:
    - **Frontend**: http://localhost:80
    - **Base de Datos**: Postgres en el puerto 5432
 
