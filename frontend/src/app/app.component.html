@@ -1,0 +1,23 @@
+<header class="navbar">
+  <div class="container py-4 flex justify-between items-center">
+    <h1 class="logo">Mini POS <span class="badge">MVP</span></h1>
+    <div class="user-profile">Admin</div>
+  </div>
+</header>
+
+<main class="container py-8">
+  <div *ngIf="posService.error()" class="alert alert-error animate-fade-in mb-6 flex justify-between items-center">
+    <span>{{ posService.error() }}</span>
+    <button (click)="posService.clearError()" class="close-btn">&times;</button>
+  </div>
+
+  <div class="grid col-12 gap-8">
+    <div class="col-span-8">
+      <h2 class="section-title mb-6">Catálogo de Productos</h2>
+      <app-product-list></app-product-list>
+    </div>
+    <div class="col-span-4 sticky-top">
+      <app-cart></app-cart>
+    </div>
+  </div>
+</main>

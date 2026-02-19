@@ -1,0 +1,35 @@
+<div class="card cart-container">
+    <div class="p-4 border-b">
+        <h2 class="text-xl">Carrito</h2>
+    </div>
+
+    <div class="cart-items p-4">
+        <p *ngIf="posService.cartItems().length === 0" class="text-muted text-center py-8">
+            Tu carrito está vacío
+        </p>
+
+        <div *ngFor="let item of posService.cartItems(); trackBy: trackByCartItemId" class="cart-item border-b py-3">
+            <div class="flex justify-between">
+                <span class="font-bold">{{ item.productName }}</span>
+                <span class="text-muted">{{ (item.price || 0) * item.quantity | currency }}</span>
+            </div>
+            <div class="flex justify-between items-center mt-2">
+                <span class="text-xs text-muted">Cant: {{ item.quantity }}</span>
+                <button (click)="posService.removeFromCart(item.productId)"
+                    class="text-error text-xs hover:underline bg-none border-none cursor-pointer">
+                    Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="posService.cartItems().length > 0" class="p-4 bg-slate-50">
+        <div class="flex justify-between items-center mb-4">
+            <span class="text-muted">Total</span>
+            <span class="text-2xl font-bold">{{ posService.cartTotal() | currency }}</span>
+        </div>
+        <button class="btn btn-primary w-full py-3 text-lg" [disabled]="posService.loading()" (click)="onCheckout()">
+            {{ posService.loading() ? 'Procesando...' : 'Finalizar Venta' }}
+        </button>
+    </div>
+</div>

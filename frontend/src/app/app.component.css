@@ -1,0 +1,104 @@
+.navbar {
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.badge {
+    font-size: 0.75rem;
+    background: var(--bg-main);
+    padding: 2px 8px;
+    border-radius: 99px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.col-span-8 {
+    grid-column: span 8;
+}
+
+.col-span-4 {
+    grid-column: span 4;
+}
+
+.gap-8 {
+    gap: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.section-title {
+    font-size: 1.25rem;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 2rem;
+    height: calc(100vh - 4rem);
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.alert-error {
+    background: #fef2f2;
+    border: 1px solid #fee2e2;
+    color: var(--error);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: inherit;
+}
+
+@media (max-width: 1024px) {
+
+    .col-span-8,
+    .col-span-4 {
+        grid-column: span 12;
+    }
+
+    .sticky-top {
+        position: relative;
+        top: 0;
+        height: auto;
+    }
+}
